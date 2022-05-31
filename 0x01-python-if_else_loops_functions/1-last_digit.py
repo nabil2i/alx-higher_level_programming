@@ -7,9 +7,9 @@ if number < 0:
 else:
     lastdigit = number % 10
 print(f"{lastdigit}", end=" ")
-if number % 10 > 5:
+if lastdigit > 5:
     print("and is greater than 5")
-elif number % 10 == 0:
+elif lastdigit == 0:
     print("and is 0")
-else:
+elif lastdigit < 6 and lastdigit != 0:
     print("and is less than 6 and not 0")
