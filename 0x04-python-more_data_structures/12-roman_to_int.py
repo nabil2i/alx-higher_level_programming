@@ -10,4 +10,4 @@ def roman_to_int(roman_string):
                                 2 * table[roman_string[idx - 1]]
         else:
             roman_int += table[roman_string[idx]]
-    return deci
+    return roman_int
