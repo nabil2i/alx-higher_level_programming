@@ -2,7 +2,8 @@
 def safe_print_division(a, b):
     try:
         q = a / b
-    except:
-        return None
+    except (ZeroDivisionError, FloatingPointError):
+        q = None
     finally:
-        print("Inside result: {:f}".format(q))
+        print("Inside result: {}".format(q))
+    return q
