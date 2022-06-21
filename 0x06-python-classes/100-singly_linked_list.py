@@ -65,10 +65,9 @@ class Node:
         Returns:
             None
         """
-        if not isinstance(value, Node) and value is not none:
+        if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be a Node object")
-        else:
-            self.__next_node = value
+        self.__next_node = value
 
 
 class SinglyLinkedList:
