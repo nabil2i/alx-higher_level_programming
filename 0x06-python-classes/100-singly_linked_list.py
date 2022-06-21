@@ -2,15 +2,7 @@
 
 
 class Node:
-    """Node of a singly linked list.
-    Private instance attribute: data:
-        - property def data(self)
-        - property setter def data(self, value)
-    Private instance attribute: next_node:
-        - property def next_node(self)
-        - property setter def next_node(self, value)
-    Instantiation with data and next_node.
-    """
+    """Node of a singly linked list."""
 
     def __init__(self, data, next_node=None):
         """Initializes the data of the node."""
@@ -43,12 +35,8 @@ class Node:
 
 
 class SinglyLinkedList:
-    """ Singly linked list.
-    Private instance attribute: head.
-    Simple instantiation.
-    Public instance method: def sorted_insert(self, value).
-    """
-
+    """ Singly linked list"""
+    
     def __init__(self):
         """Initializes the linked list."""
         self.head = None
