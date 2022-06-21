@@ -34,16 +34,16 @@ class Square:
         Args:
             value (int): size of a side of the square
 
-        Returns: None
-
+        Returns:
+            None
         """
-        if type(size) is not int:
+        if type(value) is not int:
             raise TypeError("size must be an integer")
         else:
-            if size < 0:
+            if value < 0:
                 raise ValueError("size must be >= 0")
             else:
-                self.__size = size
+                self.__size = value
 
     def area(self):
         """Returns the current square area
