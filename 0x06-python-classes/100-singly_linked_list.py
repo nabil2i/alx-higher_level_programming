@@ -83,14 +83,14 @@ class SinglyLinkedList:
         self.head = None
 
     def __str__(self):
-        """To print"""
+        """To print in the file"""
         my_str = ""
         node = self.head
         while node:
             my_str += str(node.data)
             my_str += '\n'
             node = node.next_node
-            return my_str[:-1]
+        return my_str[:-1]
 
     def sorted_insert(self, value):
         """Inserts a new node
@@ -115,5 +115,5 @@ class SinglyLinkedList:
         node = self.head
         while node.next_node and node.next_node.data < value:
             node = node.next_node
-        new_node.next_node = node.next_node
+        new_node.next_node = nodie.next_node
         node.next_node = new_node
