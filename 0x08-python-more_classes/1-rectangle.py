@@ -9,18 +9,24 @@ class Rectangle:
             __height (int): height of the rectangle
     """
     def __init__(self, width=0, height=0):
-        """Initialize a rectangle"""
+        """Initialize a rectangle
+        
+        Args:
+            width (int): width of the rectangle
+            height (int): height of the rectangle
+
+        """
         self.width = width
         self.height = height
 
     @property
-    """getter of __width"""
     def width(self):
+        """getter of __width"""
         return self.__width
 
     @width.setter
-    """setter of __width"""
     def width(self, value):
+        """setter of __width"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         else:
