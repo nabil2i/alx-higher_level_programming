@@ -22,7 +22,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
-        number_of_instances += 1
+        Rectangle.number_of_instances += 1
 
     def __str__(self):
         """Prints the rectangle with the character #
@@ -44,7 +44,7 @@ class Rectangle:
 
     def __del__(self):
         """Deletes an instance of Rectangle"""
-        number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
     @property
