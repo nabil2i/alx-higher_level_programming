@@ -17,7 +17,8 @@ class Square:
             size (int): size of a side of the square
             position (tuple): coordinates
 
-            Returns: None
+        Returns:
+            None
         """
         self.size = size
         self.position = position
