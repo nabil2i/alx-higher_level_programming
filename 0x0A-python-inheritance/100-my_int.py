@@ -4,7 +4,7 @@
 
 class MyInt(int):
     """class MyInt"""
-    def __new__():
+    def __new__(cls, *args, **kwargs):
         """new instance oef the class"""
         return super(MyInt, cls).__new__(cls, *args, **kwargs)
 
