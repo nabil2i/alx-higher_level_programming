@@ -4,3 +4,4 @@
 8-my_*.py
 my_*
 *.txt
+__pycache__
