@@ -10,7 +10,7 @@ filename = "add_item.json"
 
 try:
     my_json_list = load_from_json_file(filename)
-except:
+except (Exception):
     my_json_list = []
 
 for arg in argv[1:]:
