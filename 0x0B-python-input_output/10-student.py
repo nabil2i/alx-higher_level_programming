@@ -28,4 +28,4 @@ class Student:
                 new_dict[attr] = self.__dict__[attr]
             except (Exception):
                 pass
-            return new_dict
+        return new_dict
