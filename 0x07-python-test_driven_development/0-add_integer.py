@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """
-Module add-integer
-Adds two integer together
+This module contains the function add-integer
+that adds two integer together
 
 """
 
 
 def add_integer(a, b=98):
     """Returns the addition of a and b,
-    or an error if a and b are not integers or floats
+    or raise TypeError if a and b are not integers or floats
     """
 
     if type(a) is not int and type(a) is not float:
