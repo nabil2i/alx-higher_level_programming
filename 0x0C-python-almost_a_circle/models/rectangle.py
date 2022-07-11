@@ -6,12 +6,10 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """class Rectangle derived from Base
-    """
+    """class Rectangle derived from Base"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initializes an instance of Rectangle
-
         Args:
             __width (int): width of the rectangle
             __height (int): height of the rectangle
@@ -46,21 +44,22 @@ class Rectangle(Base):
             return self.__y
 
         @width.setter
-        def width(self, width):
+        def width(self, value):
             """Setter of __width"""
-            self.__width = width
+            self.__width = value
 
         @height.setter
-        def height(self, height):
+        def height(self, value:
             """Setter of __height"""
-            self.__height = height
+            self.__height = value
 
         @x.setter
-        def x(self, x):
+        def x(self, value):
             """Setter of __x"""
-            self.__x = x
+            self.__x = value
 
         @y.setter
-        def y(self, y):
+        def y(self, value):
             """Setter of __y"""
-            self.__y = y
+            self.__y = value
+
