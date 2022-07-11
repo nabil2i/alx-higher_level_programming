@@ -7,7 +7,7 @@ from models.base import Base
 
 class Rectangle(Base):
     """class Rectangle derived from Base
-    
+
     Public instance methods:
         - area()
     """
