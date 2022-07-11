@@ -15,12 +15,11 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initializes an instance of Rectangle
         Args:
-            __width (int): width of the rectangle
+        __width (int): width of the rectangle
             __height (int): height of the rectangle
             __x (int): position on x axis
             __y (int): position of y axis
         """
-
         self.width = width
         self.height = height
         self.x = x
@@ -53,7 +52,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        """Setter of __width"""
+        """Sets the width attribute."""
 
         if type(value) is not int:
             raise TypeError("width must be an integer")
@@ -63,7 +62,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        """Setter of __height"""
+        """Sets the height attribute."""
 
         if type(value) is not int:
             raise TypeError("height must be an integer")
@@ -73,7 +72,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        """Setter of __x"""
+        """Sets the x attribute."""
 
         if type(value) is not int:
             raise TypeError("x must be an integer")
@@ -83,10 +82,10 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        """Setter of __y"""
+        """Sets the y attribute."""
 
         if type(value) is not int:
-            raise TypeError("x must be an integer")
+            raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
@@ -148,8 +147,9 @@ class Rectangle(Base):
                     self.y = value
 
     def to_dictionary(self):
-        """returns the dictionary representation of a Rectangle"""
+        """returns the dictionary representation
+        of a Rectangle"""
 
-        dictio = {'id': self.id, 'width': self.__width, 'height': self.__height,
-                'x': self.__x, 'y': self.__y}
+        dicti = {'id': self.id, 'width': self.__width,
+                 'height': self.__height, 'x': self.__x, 'y': self.__y}
         return dictio
