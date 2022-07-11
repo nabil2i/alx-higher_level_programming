@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """Module square
 defines a a class square that derives from rectangle
 """
@@ -49,7 +49,20 @@ class Square(Rectangle):
                 self.id, self.x, self.y, self.__width)
 
     def update(self, *args, **kwargs):
-        """assigns attributes:"""
+        """assigns attributes
+
+        Args:
+            id :
+            size :
+            x :
+            y :self.id = value
+                if key == "size":
+                    self.size = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
+        """
 
         if args is not None and len(args) != 0:
             if len(args) >= 1::
