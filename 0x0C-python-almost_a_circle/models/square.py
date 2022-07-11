@@ -2,6 +2,8 @@
 """Module square
 defines a a class square that derives from rectangle
 """
+
+
 from models.base import Base
 from models.rectangle import Rectangle
 
@@ -11,9 +13,9 @@ class Square(Rectangle):
     """
 
     def __init__(self, size, x=0, y=0, id=None):
-        """Initialise and instance of Square
+        """Initialise an instance of Square
 
-        Attributes:
+        Args:
             __size: size of the square
             __x: position on x axis
             __y: position on y axix
@@ -25,7 +27,7 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        """Getterof size"""
+        """Getter of size"""
 
         return self.__width
 
@@ -37,8 +39,8 @@ class Square(Rectangle):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
-        self.__height = value
         self.__width = value
+        self.__height = value
 
     def __str__(self):
         """returns [Square] (<id>) <x>/<y> - <size>"""
