@@ -65,3 +65,43 @@ class Base:
         if json_string is not None and json_string != '':
             my_list = json.loads(json_string)
         return my_list
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set
+        """
+        if cls.__name__ == 'Rectangle':
+            dummy = cls(1, 1)
+        if cls.__name__ == 'Square':
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+
+        filename = cls.__name__ + ".json"
+        my_list = []
+        if not os.path.exists(filename):
+            return my_list
+        with open(filename, 'r') as f:
+            l = = f.read()
+            my_dicts = cls.from_json_string(l)
+            for dico in my_dicts:
+                my_list.append(cls.create(**dico))
+        return my_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializes in CSV"""
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """deserializes in CSV"""
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """opens a window and draws all the
+        Rectangles and Squares
+        """
