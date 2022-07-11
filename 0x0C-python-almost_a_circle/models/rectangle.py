@@ -150,6 +150,7 @@ class Rectangle(Base):
         """returns the dictionary representation
         of a Rectangle"""
 
-        dicti = {'id': self.id, 'width': self.__width,
-                 'height': self.__height, 'x': self.__x, 'y': self.__y}
+        dictio = {'id': self.id, 'width': self.__width,
+                  'height': self.__height, 'x': self.__x,
+                  'y': self.__y}
         return dictio
