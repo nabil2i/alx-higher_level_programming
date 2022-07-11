@@ -55,17 +55,11 @@ class Square(Rectangle):
             id :
             size :
             x :
-            y :self.id = value
-                if key == "size":
-                    self.size = value
-                if key == "x":
-                    self.x = value
-                if key == "y":
-                    self.y = value
+            y :
         """
 
         if args is not None and len(args) != 0:
-            if len(args) >= 1::
+            if len(args) >= 1:
                 self.id = args[0]
             if len(args) > 1:
                 self.size = args[1]
