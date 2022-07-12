@@ -87,8 +87,7 @@ class Base:
         if not os.path.exists(filename):
             return my_list
         with open(filename, 'r') as f:
-            l = f.read()
-            list_of_dicts = cls.from_json_string(l)
+            list_of_dicts = cls.from_json_string(f.read())
             for dico in list_of_dicts:
                 my_list.append(cls.create(**dico))
         return my_list
