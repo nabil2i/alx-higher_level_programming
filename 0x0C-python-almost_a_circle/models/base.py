@@ -86,7 +86,7 @@ class Base:
         if not os.path.exists(filename):
             return my_list
         with open(filename, 'r') as f:
-            l = = f.read()
+            l = f.read()
             my_dicts = cls.from_json_string(l)
             for dico in my_dicts:
                 my_list.append(cls.create(**dico))
@@ -95,13 +95,16 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """serializes in CSV"""
+        pass
 
     @classmethod
     def load_from_file_csv(cls):
         """deserializes in CSV"""
+        pass
 
     @staticmethod
     def draw(list_rectangles, list_squares):
         """opens a window and draws all the
         Rectangles and Squares
         """
+        pass
