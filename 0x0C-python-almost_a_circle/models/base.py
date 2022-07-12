@@ -83,12 +83,13 @@ class Base:
 
         filename = cls.__name__ + ".json"
         my_list = []
+        list_of_dicts = []
         if not os.path.exists(filename):
             return my_list
         with open(filename, 'r') as f:
             l = f.read()
-            my_dicts = cls.from_json_string(l)
-            for dico in my_dicts:
+            list_of_dicts = cls.from_json_string(l)
+            for dico in list_of_dicts:
                 my_list.append(cls.create(**dico))
         return my_list
 
