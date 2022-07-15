@@ -12,10 +12,8 @@ import os
 class TestBase(unittest.TestCase):
     """Test class for Base class."""
 
-
     def setUp(self):
         Base._Base__nb_objects = 0
-
 
     def test_1_0(self):
         """Create new instances: check for id."""
@@ -35,14 +33,12 @@ class TestBase(unittest.TestCase):
         b6 = Base(9)
         self.assertEqual(b6.id, 9)
 
-
     def test_1_1(self):
         """Test for type and instance."""
 
         b6 = Base()
         self.assertEqual(type(b6), Base)
         self.assertTrue(isinstance(b6, Base))
-
 
     def test_15_0(self):
         """Test static method to_json_string with regular dict."""
@@ -57,7 +53,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(json_d_1, "[]")
         json_d_2 = Base.to_json_string(None)
 
-
     def test_15_2(self):
         """Test static method to_json_string with wrong number of args."""
 
@@ -70,7 +65,6 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(TypeError) as x:
             Base.to_json_string([{1, 2}], [{3, 4}])
         self.assertEqual(s2, str(x.exception))
-
 
     def test_16_0(self):
         """Test class method save_to_file with normal types."""
@@ -106,7 +100,6 @@ class TestBase(unittest.TestCase):
         with open("Square.json", "r") as f:
             self.assertEqual(f.read(), res)
 
-
     def test_16_1(self):
         """Test class method save_to_file with errors."""
 
@@ -126,7 +119,6 @@ class TestBase(unittest.TestCase):
             "'int' object is not iterable", str(
                 x.exception))
 
-
     def test_16_2(self):
         """Test class method save_to_file with wrong args."""
 
@@ -140,7 +132,6 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(TypeError) as x:
             Rectangle.save_to_file([Rectangle(9, 4), Rectangle(8, 9)], 98)
         self.assertEqual(s2, str(x.exception))
-
 
     def test_17_0(self):
         """Test static method from_json_string with normal types."""
@@ -162,7 +153,6 @@ class TestBase(unittest.TestCase):
         list_output_2 = Rectangle.from_json_string(None)
         self.assertEqual(list_output_2, [])
 
-
     def test_17_2(self):
         """Test static method from_json_string with wrong args."""
 
@@ -175,7 +165,6 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(TypeError) as x:
             Rectangle.from_json_string("Hi", 98)
         self.assertEqual(s2, str(x.exception))
-
 
     def test_18_0(self):
         """Test class method create with normal types."""
@@ -193,7 +182,6 @@ class TestBase(unittest.TestCase):
         self.assertFalse(s1 is s2)
         self.assertFalse(s1 == s2)
 
-
     def test_18_1(self):
         """Test class method create with wrong types."""
 
@@ -203,7 +191,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(
             "create() takes 1 positional argument but 2 were given", str(
                 x.exception))
-
 
     def test_19_0(self):
         """Test class method load_from_file with normal types."""
@@ -224,7 +211,6 @@ class TestBase(unittest.TestCase):
         for x in zip(list_squares_input, list_squares_output):
             self.assertEqual(str(x[0]), str(x[1]))
 
-
     def test_19_1(self):
         """Test class method load_from_file with missing files."""
 
@@ -239,7 +225,6 @@ class TestBase(unittest.TestCase):
         list_squares_output = Square.load_from_file()
         self.assertEqual(list_squares_output, [])
 
-
     def test_19_2(self):
         """Test class method load_from_file with wrong args."""
 
@@ -247,7 +232,6 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(TypeError) as x:
             list_rectangles_output = Rectangle.load_from_file("Hello")
         self.assertEqual(s, str(x.exception))
-
 
 if __name__ == '__main__':
     unittest.main()

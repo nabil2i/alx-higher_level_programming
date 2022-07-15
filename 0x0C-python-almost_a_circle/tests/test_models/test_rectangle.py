@@ -12,10 +12,8 @@ from models.square import Square
 class TestBase(unittest.TestCase):
     """Test class for Rectangle class."""
 
-
     def setUp(self):
         Base._Base__nb_objects = 0
-
 
     def test_2_0(self):
         """Test Rectangle class: check for id."""
@@ -35,7 +33,6 @@ class TestBase(unittest.TestCase):
         r6 = Rectangle(10, 2, 4, 5, 9)
         self.assertEqual(r6.id, 9)
 
-
     def test_2_1(self):
         """Test Rectangle class: check for attributes values."""
 
@@ -49,7 +46,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(r2.height, 2)
         self.assertEqual(r2.x, 4)
         self.assertEqual(r2.y, 5)
-
 
     def test_2_2(self):
         """Test class Rectangle: check for missing arguments."""
@@ -65,7 +61,6 @@ class TestBase(unittest.TestCase):
             r1 = Rectangle()
         self.assertEqual(s, str(x.exception))
 
-
     def test_2_3(self):
         """Test class Rectangle: check for inheritance."""
 
@@ -73,7 +68,6 @@ class TestBase(unittest.TestCase):
         self.assertTrue(isinstance(r1, Base))
         self.assertTrue(issubclass(Rectangle, Base))
         self.assertFalse(isinstance(Rectangle, Base))
-
 
     def test_3_0(self):
         """Test Rectangle class: check for wrong attributes."""
@@ -106,7 +100,6 @@ class TestBase(unittest.TestCase):
             r = Rectangle(2, 8, 9, -65)
         self.assertEqual("y must be >= 0", str(x.exception))
 
-
     def test_4_0(self):
         """Test for public method area with normal types."""
 
@@ -116,7 +109,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(r2.area(), 150)
         r3 = Rectangle(8, 7, 0, 0, 12)
         self.assertEqual(r3.area(), 56)
-
 
     def test_4_1(self):
         """Test for public method area with wrong args."""
@@ -128,7 +120,6 @@ class TestBase(unittest.TestCase):
             "area() takes 1 positional argument but 2 were given", str(
                 x.exception))
 
-
     def test_5_1(self):
         """Test for public method display with wrong args."""
 
@@ -138,7 +129,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(
             "display() takes 1 positional argument but 2 were given", str(
                 x.exception))
-
 
     def test_8_0(self):
         """Test for public method update."""
@@ -157,7 +147,6 @@ class TestBase(unittest.TestCase):
         r1.update()
         self.assertEqual(str(r1), "[Rectangle] (89) 4/5 - 2/3")
 
-
     def test_8_1(self):
         """Test for public method update with wrong types."""
 
@@ -168,7 +157,6 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(TypeError) as x:
             r1.update(65, 89, "hi")
         self.assertEqual("height must be an integer", str(x.exception))
-
 
     def test_9_0(self):
         """Test for public method update with kwargs."""
@@ -182,7 +170,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(r1.x, 1)
         self.assertEqual(r1.height, 2)
 
-
     def test_9_1(self):
         """Test for public method update with wrong types in kwargs."""
 
@@ -193,7 +180,6 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(TypeError) as x:
             r1.update(height=65, x=2, width="hi")
         self.assertEqual("width must be an integer", str(x.exception))
-
 
     def test_13_0(self):
         """Test for public method to_dictionary."""
@@ -210,7 +196,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(type(r2_dictionary), dict)
         self.assertFalse(r1 == r2)
 
-
     def test_13_1(self):
         """Test for public method to_dictionary with wrong args."""
 
@@ -219,7 +204,6 @@ class TestBase(unittest.TestCase):
             r1 = Rectangle(10, 2, 1, 9)
             r1_dictionary = r1.to_dictionary("Hi")
         self.assertEqual(s, str(x.exception))
-
 
 if __name__ == '__main__':
     unittest.main()
