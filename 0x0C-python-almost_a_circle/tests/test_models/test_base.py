@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Unittest base.
+"""Unittest base
 test_tasknumber_testnumber
 """
 
