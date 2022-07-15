@@ -3,7 +3,7 @@
 test_tasknumber_testnumber
 """
 
-import unisttest
+import unittest
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -52,51 +52,6 @@ class TestBase(unittest.TestCase):
         json_d_1 = Base.to_json_string([])
         self.assertEqual(json_d_1, "[]")
         json_d_2 = Base.to_json_string(None)
-        self.assertEqual(json_d_1, "[]")
-
-    def test_15_1(self):
-        """Test static method to_json_string with wrong types."""
-
-        with self.assertRaises(TypeError) as x:
-            Base.to_json_string(9)
-        self.assertEqual(
-            "list_dictionaries must be a list of dictionaries", str(
-                x.exception))
-        with self.assertRaises(TypeError) as x:
-            Base.to_json_string("Hello")
-        self.assertEqual(
-            "list_dictionaries must be a list of dictionaries", str(
-                x.exception))
-        with self.assertRaises(TypeError) as x:
-            Base.to_json_string(["Hi", "Here"])
-        self.assertEqual(
-            "list_dictionaries must be a list of dictionaries", str(
-                x.exception))
-        with self.assertRaises(TypeError) as x:
-            Base.to_json_string(7.8)
-        self.assertEqual(
-            "list_dictionaries must be a list of dictionaries", str(
-                x.exception))
-        with self.assertRaises(TypeError) as x:
-            Base.to_json_string([2, 1, 3, 4])
-        self.assertEqual(
-            "list_dictionaries must be a list of dictionaries", str(
-                x.exception))
-        with self.assertRaises(TypeError) as x:
-            Base.to_json_string({1: 'hi', 2: 'there'})
-        self.assertEqual(
-            "list_dictionaries must be a list of dictionaries", str(
-                x.exception))
-        with self.assertRaises(TypeError) as x:
-            Base.to_json_string((9, 0))
-        self.assertEqual(
-            "list_dictionaries must be a list of dictionaries", str(
-                x.exception))
-        with self.assertRaises(TypeError) as x:
-            Base.to_json_string(True)
-        self.assertEqual(
-            "list_dictionaries must be a list of dictionaries", str(
-                x.exception))
 
     def test_15_2(self):
         """Test static method to_json_string with wrong number of args."""
@@ -198,24 +153,6 @@ class TestBase(unittest.TestCase):
         list_output_2 = Rectangle.from_json_string(None)
         self.assertEqual(list_output_2, [])
 
-    def test_17_1(self):
-        """Test static method from_json_string with wrong types."""
-
-        with self.assertRaises(TypeError) as x:
-            list_output = Rectangle.from_json_string([8, 9])
-        self.assertEqual("json_string must be a string", str(x.exception))
-        with self.assertRaises(TypeError) as x:
-            list_output = Rectangle.from_json_string(8)
-        self.assertEqual("json_string must be a string", str(x.exception))
-        with self.assertRaises(TypeError) as x:
-            list_output = Rectangle.from_json_string(9.6)
-        self.assertEqual("json_string must be a string", str(x.exception))
-        with self.assertRaises(TypeError) as x:
-            list_output = Rectangle.from_json_string((4, 5))
-        self.assertEqual("json_string must be a string", str(x.exception))
-        with self.assertRaises(TypeError) as x:
-            list_output = Rectangle.from_json_string({1: 'Hello', 2: 'Hi'})
-        self.assertEqual("json_string must be a string", str(x.exception))
 
     def test_17_2(self):
         """Test static method from_json_string with wrong args."""
