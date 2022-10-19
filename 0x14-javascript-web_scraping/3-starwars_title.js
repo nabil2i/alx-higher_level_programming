@@ -2,9 +2,12 @@
 
 const request = require('request');
 
-request('http://swapi.co/api/films/:' + process.argv[2], function (error, response, body) {
-  if (error) {
-    console.error(error);
+request('http://swapi.co/api/films/' + process.argv[2], function (err, response, body) {
+  if (err) {
+    console.error(err);
+  } else if (response.statusCode === 200) {
+    console.log(JSON.parse(body).title);
+  } else {
+    console.log('Error. Status code: ' + response.statusCode);  
   }
-  console.log(JSON.parse(body).title);
 });
