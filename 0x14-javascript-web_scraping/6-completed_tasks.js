@@ -19,6 +19,6 @@ request(url, function (err, response, body) {
     }
     console.log(completed_dict);
   } else {
-    console.log('An error occured. Status code: ' + response.statusCode);
+    console.log('Error. Status code: ' + response.statusCode);
   }
 });
