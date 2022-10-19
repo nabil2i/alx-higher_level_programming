@@ -5,19 +5,19 @@ request(url, function (err, response, body) {
   if (err) {
     console.log(err);
   } else if (response.statusCode === 200) {
-    let completed = {};
+    let completed_dict = {};
     let tasks = JSON.parse(body);
     for (let i in tasks) {
       let task = tasks[i];
       if (task.completed === true) {
-        if (completed[task.userId] === undefined) {
-          completed[task.userId] = 1;
+        if (completed_dict[task.userId] === undefined) {
+          completed_dict[task.userId] = 1;
         } else {
-          completed[task.userId]++;
+          completed_dict[task.userId]++;
         }
       }
     }
-    console.log(completed);
+    console.log(completed_dict);
   } else {
     console.log('An error occured. Status code: ' + response.statusCode);
   }
