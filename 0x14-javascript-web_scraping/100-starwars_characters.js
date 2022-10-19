@@ -1,5 +1,21 @@
 #!/usr/bin/node
 const request = require('request');
+
+request('https://swapi-api.hbtn.io/api/people' + process.argv[2], function (error, response, body) {
+  if (error) {
+    console.error(error);
+  }
+  JSON.parse(body).characters.forEach(function (url, callback) {
+    request(url, function (error, response, body) {
+      if (error) {
+        console.error(error);
+      }
+      console.log(JSON.parse(body).name);
+    });
+  });
+});
+/*
+const request = require('request');
 const film = process.argv[2];
 let url = 'https://swapi-api.hbtn.io/api/people';
 function moviecharacters (film, url) {
@@ -25,3 +41,4 @@ function moviecharacters (film, url) {
   });
 }
 moviecharacters(film, url);
+*/

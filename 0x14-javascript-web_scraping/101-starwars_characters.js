@@ -1,4 +1,25 @@
 #!/usr/bin/node
+function helpRequest (arr, i) {
+    if (i === arr.length) {
+      return;
+    }
+    request(arr[i], function (error, response, body) {
+      if (error) {
+        console.error(error);
+      }
+      console.log(JSON.parse(body).name);
+      helpRequest(arr, i + 1);
+    });
+  }
+  
+  request('https://swapi-api.hbtn.io/api/films' + process.argv[2], function (error, response, body) {
+    if (error) {
+      console.error(error);
+    }
+    const charac = JSON.parse(body).characters;
+    helpRequest(charac, 0);
+  });
+/*
 const request = require('request');
 const film = process.argv[2];
 let url = 'https://swapi-api.hbtn.io/api/films';
@@ -25,3 +46,4 @@ function moviecharacters (film, url) {
   });
 }
 moviecharacters(film, url);
+*/
