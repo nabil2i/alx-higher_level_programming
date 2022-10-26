@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
     $('#language_code').keypress(function (event) {
       const keyCode = event.which;
       if (keyCode === 13) {
